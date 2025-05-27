@@ -39,6 +39,7 @@ public class Berserker extends Ability {
 
     @Config
     public static int duration = 25;
+    
     @Config
     public static Material wand = Material.BLAZE_ROD;
 
@@ -119,7 +120,7 @@ public class Berserker extends Ability {
         new BukkitRunnable() {
             long ticks = 0;
             @Override
-            public void run() {
+            public void run() {    
                 if (ticks >= durationTicks || !player.isOnline()) {
                     cancel();
                     return;
@@ -128,7 +129,7 @@ public class Berserker extends Ability {
                 Location particleLoc = player.getLocation().clone().add(0, 2.0, 0);
                 player.getWorld().spawnParticle(
                         Particle.ANGRY_VILLAGER,
-                        particleLoc,
+                        particleLoc,                
                         4,
                         0.25, 0.0, 0.25, 0.0
                 );
